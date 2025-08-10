@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PyCalc Web Calculator</title>
+</head>
+<body>
+    <h1>PyCalc Web Calculator</h1>
+    <form action="/calculate">
+        <input type="text" name="expression" placeholder="2+3*4" value="2+3*4">
+        <button type="submit">Calculate</button>
+    </form>
+    
+    {% if result %}
+        <p>Result: <strong>{{ result }}</strong></p>
+    {% endif %}
+    
+    <h3>History (Last 5)</h3>
+    <ul>
+        {% for item in history %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
